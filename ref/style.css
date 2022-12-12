@@ -1,0 +1,369 @@
+/*==============================================================
+    webフォントの読み込み
+==============================================================*/
+
+/* 'M PLUS 1p' */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;500&family=Ubuntu:wght@300&display=swap');
+
+/*==============================================================
+    変数設定
+==============================================================*/
+
+:root {
+    /* font-family設定 */
+    --body: 'M PLUS 1p', sans-serif;
+    /* font-weight設定 */
+    --normal: 300;
+    --bold: 500;
+    /* 基準色設定(HSL) */
+    --base: 140, 20%;
+}
+
+/*==============================================================
+    リセットCSS
+==============================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+/*==============================================================
+    親要素への指定
+==============================================================*/
+
+html {
+    /* font-size指定 */
+    font-size: 16px;
+    /* font-family指定 */
+    font-family: var(--body);
+    font-weight: var(--normal);
+    /* marginリセット */
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* スムーズスクロール */
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    /* line-height */
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 720px) {
+    html {
+        /* スマホの場合に適用 */
+        font-size: 12px;
+    }
+}
+
+body {
+    margin: 0;
+    /* 白にちょっとだけ緑 */
+    background-color: hsl(var(--base), 96.7%);
+    min-height: 100vh;
+}
+
+/*==============================================================
+    ヘッダー
+==============================================================*/
+
+header {
+    /* 上の方に固定する */
+    position: fixed;
+    left: 0;
+    top: 0;
+    /* 幅100%, 高さ5rem */
+    width: 100%;
+    height: 5rem;
+    /* 色を少し濃くする */
+    background-color: hsl(var(--base), 20%);
+    /* flexboxに指定 */
+    display: flex;
+    /* box-shadow */
+    box-shadow: 0px 0px 2rem 0px rgba(0, 0, 0, 0.5);
+    /* z-index */
+    z-index: 100;
+}
+
+header>*:not(p) {
+    height: 3rem;
+}
+
+header>* {
+    width: auto;
+    align-items: center;
+    margin: auto 1rem;
+    vertical-align: middle;
+    color: hsl(var(--base), 97.5%);
+    font-size: 1.5rem;
+}
+
+header> :first-child {
+    margin-right: auto;
+}
+
+@media screen and (max-width: 720px) {
+    header>* {
+        font-size: 1.25rem;
+    }
+}
+
+/*==============================================================
+    ヘッダー調整(div.headerComplement)
+==============================================================*/
+
+div.headerComplement {
+    height: 5rem;
+}
+
+/*==============================================================
+    ヘッダー調整(div.mainVisual)
+==============================================================*/
+
+div.mainVisual {
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    position: relative;
+    background-color: #E0E6E3;
+    box-shadow: inset 0px 0px 1rem 0px rgba(0, 0, 0, 0.25);
+}
+
+div.mainVisual>div.brown {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background-color: #60350B;
+    border-radius: 24px;
+}
+
+div.mainVisual>img.sunogura-upright {
+    position: absolute;
+    left: 67.5%;
+    top: 22.5%;
+    transform: translate(-50%, -50%);
+    width: 7.5%;
+}
+
+div.mainVisual>img.sunogura-bottomleft {
+    position: absolute;
+    left: 32.5%;
+    top: 77.5%;
+    transform: translate(-50%, -50%) scaleY(-1);
+    width: 7.5%;
+}
+
+div.mainVisual>img.co2supLogo {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    width: 120px;
+}
+
+div.mainVisual>p.catchcopy {
+    position: absolute;
+    left: 50%;
+    top: 37.5%;
+    transform: translate(-50%, -50%);
+    color: hsl(var(--base), 97.5%);
+    font-size: 1.25rem;
+    font-weight: var(--normal);
+}
+
+div.mainVisual>p.name {
+    position: absolute;
+    left: 50%;
+    top: 48.5%;
+    transform: translate(-50%, -50%);
+    color: hsl(var(--base), 97.5%);
+    font-size: 2rem;
+    font-weight: var(--bold);
+}
+
+div.mainVisual>button.push {
+    position: absolute;
+    left: 50%;
+    top: 62.5%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 720px) {
+    div.mainVisual {
+        height: 250px;
+    }
+
+    div.mainVisual>div.brown {
+        width: 60%;
+    }
+
+    div.mainVisual>img.sunogura-bottomleft,
+    div.mainVisual>img.sunogura-upright {
+        width: 12%;
+    }
+
+    div.mainVisual>img.co2supLogo {
+        width: 100px;
+    }
+
+    div.mainVisual>p.catchcopy {
+        font-size: 1rem;
+    }
+
+    div.mainVisual>p.name {
+        font-size: 1.5rem;
+    }
+
+    div.mainVisual>button.push {
+        font-size: 1.25rem;
+        padding: 0.125rem 1rem;
+    }
+}
+
+/*==============================================================
+    ヘッダー調整(button.push)
+==============================================================*/
+
+button.push {
+    display: block;
+    color: hsl(var(--base), 97.5%);
+    background-color: hsl(var(--base), 40%);
+    padding: 0.25rem 1.5rem;
+    border-radius: 10rem;
+    z-index: 2;
+    box-shadow: 0px 0px 1rem 0px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+button.push:hover {
+    transform: scale(1.02);
+    background-color: hsl(var(--base), 45%);
+    box-shadow: 0px 0px 1.1rem 0px rgba(0, 0, 0, 0.25);
+}
+
+button.push:active {
+    transform: scale(0.98);
+    background-color: hsl(var(--base), 30%);
+    box-shadow: 0px 0px 0.8rem 0px rgba(0, 0, 0, 0.25);
+}
+
+/*==============================================================
+    機能・メリット(div.advantage)
+==============================================================*/
+
+div.advantage {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 12.5%;
+}
+
+@media screen and (max-width: 720px) {
+    div.advantage {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        margin: 3rem 2.5%;
+    }
+}
+
+div.advantage>h2 {
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+div.advantage>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1.5rem 0;
+}
+
+div.advantage>div>:is(img, div) {
+    width: calc(50% - 2rem);
+    margin: 0 1rem;
+}
+
+div.advantage>div>img {
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem;
+    object-fit: cover;
+    border: 4px hsl(var(--base), 50%) solid;
+}
+
+div.advantage>div>div>h3 {
+    margin: 0.2rem auto 1rem;
+    font-size: 1.33rem;
+}
+
+/*==============================================================
+    価格(div.price)
+==============================================================*/
+
+div.plans {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 1.5rem 17.5%;
+}
+
+@media screen and (max-width: 720px) {
+    div.plans {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 1rem 2.5%;
+    }
+}
+
+div.price>h2 {
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+div.plans>div.plan {
+    background-color: hsl(var(--base), 90%);
+    border: 3px hsl(var(--base), 50%) solid;
+    border-radius: 0.5rem;
+    width: 100%;
+    margin: 0 0.5rem 0.5rem;
+}
+
+div.plans>div.plan>h2.plan-name {
+    text-align: center;
+}
+
+div.plans>div.plan>p.plan-price {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    color: #e66;
+}
+
+div.plans>div.plan>p.plan-price:after {
+    content: "円/人/月";
+    color: hsl(var(--base), 5%);
+    font-size: 1rem;
+}
+
+div.plans>div.plan>ul {
+    width: 56%;
+    margin: 1rem 22%;
+}
+
+main>button.push {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem auto;
+    border: 2px hsl(var(--base), 30%) solid;
+}
