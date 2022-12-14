@@ -306,6 +306,42 @@ div.advantage>div>div>h3 {
 }
 
 /*==============================================================
+    相関図(div.correlation)
+==============================================================*/
+
+div.correlation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 2rem;
+    padding: 3rem 12.5%;
+}
+
+div.correlation * {
+    margin: 0.5rem auto;
+    max-width: 100%;
+}
+
+div.correlation>img {
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 720px) {
+    div.correlation {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 2rem;
+        padding: 3rem 2.5%;
+    }
+
+    div.correlation * {
+        margin: 0.5rem auto;
+        max-width: 100%;
+    }
+}
+
+/*==============================================================
     価格(div.price)
 ==============================================================*/
 
